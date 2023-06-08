@@ -6,9 +6,9 @@ use Core\Entity\Entity;
 
 class PostEntity extends Entity
 {
-    private int $id;
-    private string $titre;
-    private string $contenu;
+    public int $id;
+    public string $titre;
+    public string $contenu;
 
     public function getUrl(): string
     {

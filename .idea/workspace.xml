@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3caba107-3d7b-4834-978f-a59ff9ce1cf8" name="Changes" comment="" />
+    <list default="true" id="3caba107-3d7b-4834-978f-a59ff9ce1cf8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/core/HTML/BootstrapForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/HTML/Form.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/admin/posts/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/users/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Auth/DBAuth.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Auth/DBAuth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Database/MysqlDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database/MysqlDatabase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Table/Table.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Table/Table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/posts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/posts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/PostEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/PostEntity.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +116,7 @@
       <workItem from="1686059222825" duration="6708000" />
       <workItem from="1686127867080" duration="18473000" />
       <workItem from="1686149151974" duration="3802000" />
-      <workItem from="1686211943096" duration="7429000" />
+      <workItem from="1686211943096" duration="19016000" />
     </task>
     <servers />
   </component>

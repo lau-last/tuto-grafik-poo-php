@@ -1,4 +1,5 @@
 <?php
+session_start();
 \error_reporting(E_ALL);
 \ini_set('display_errors', 1);
 
@@ -10,16 +11,16 @@ $page = $_GET['page'] ?? 'home';
 
 $app = \App\App::getInstance();
 $auth = new \Core\Auth\DBAuth($app->getDB());
-if($auth->logged()){
+if (!$auth->logged()) {
     $app->forbidden();
 }
 
 \ob_start();
 if ($page === 'home') {
     require ROOT . '/pages/admin/posts/index.php';
-} elseif ($page === 'posts.category') {
-    require ROOT . '/pages/admin/posts/category.php';
-}elseif ($page === 'posts.show'){
+} elseif ($page === 'posts.edit') {
+    require ROOT . '/pages/admin/posts/edit.php';
+} elseif ($page === 'posts.show') {
     require ROOT . '/pages/admin/posts/show.php';
 }
 $content = \ob_get_clean();

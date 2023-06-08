@@ -33,6 +33,13 @@ class MysqlDatabase extends Database
     public function query(string $statement, ?string $className = null, bool $one = false)
     {
         $res = $this->getPDO()->query($statement);
+        if(
+            \strpos($statement, 'UPDATE') === 0 ||
+            \strpos($statement, 'INSERT') === 0 ||
+            \strpos($statement, 'DELETE') === 0
+        ){
+            return $res;
+        }
         if ($className === null) {
             $res->setFetchMode(PDO::FETCH_OBJ);
         } else {
@@ -48,7 +55,14 @@ class MysqlDatabase extends Database
     public function prepare(string $statement, array $attributes, string $className = null, bool $one = false)
     {
         $res = $this->getPDO()->prepare($statement);
-        $res->execute($attributes);
+        $req = $res->execute($attributes);
+        if (
+            \strpos($statement, 'UPDATE') === 0 ||
+            \strpos($statement, 'INSERT') === 0 ||
+            \strpos($statement, 'DELETE') === 0
+        ){
+            return $req;
+        }
         if ($className === null) {
             $res->setFetchMode(PDO::FETCH_OBJ);
         } else {
