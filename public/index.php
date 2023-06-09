@@ -9,7 +9,6 @@ require_once '../vendor/autoload.php';
 
 $page = $_GET['page'] ?? 'home';
 
-\ob_start();
 if ($page === 'home') {
     $controller = new \App\Controller\PostsController();
     $controller->index();
