@@ -75,4 +75,8 @@ class MysqlDatabase extends Database
         }
 
     }
+
+    public function lastInsertId(){
+        return $this->getPDO()->lastInsertId();
+    }
 }

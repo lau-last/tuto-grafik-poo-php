@@ -11,13 +11,16 @@ $page = $_GET['page'] ?? 'home';
 
 \ob_start();
 if ($page === 'home') {
-    require ROOT . '/pages/posts/home.php';
-} elseif ($page === 'posts.category') {
-    require ROOT . '/pages/posts/category.php';
+    $controller = new \App\Controller\PostsController();
+    $controller->index();
+} elseif ($page === 'posts.categories') {
+    $controller = new \App\Controller\PostsController();
+    $controller->categories();
 }elseif ($page === 'posts.show'){
-    require ROOT . '/pages/posts/show.php';
+    $controller = new \App\Controller\PostsController();
+    $controller->show();
 }elseif ($page === 'login'){
-    require ROOT . '/pages/users/login.php';
+    $controller = new \App\Controller\UserController();
+    $controller->login();
 }
-$content = \ob_get_clean();
-require ROOT . '/pages/templates/default.php';
+

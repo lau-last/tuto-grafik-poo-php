@@ -26,4 +26,19 @@ class BootstrapForm extends Form
     {
         return $this->surround('<button type="submit" class="btn btn-primary">Envoyer</button>');
     }
+
+    public function select($name, $label, $option): string
+    {
+        $label = '<label>' . $label . '</label>';
+        $input = '<select class="form-control" name="' . $name . '">';
+        foreach ($option as $key => $value) {
+            $attributes = '';
+            if($key === $this->getValue($name)){
+                $attributes = 'selected';
+            }
+            $input .= "<option value='$key' $attributes>$value</option>";
+        }
+        $input .= '</select>';
+        return $this->surround($label . $input);
+    }
 }

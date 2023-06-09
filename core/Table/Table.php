@@ -31,6 +31,32 @@ abstract class Table
         $sql_part = implode(', ', $sql_parts);
         return $this->query("UPDATE {$this->table} SET {$sql_part}  WHERE id = ?", $attributes, true);
     }
+    public function delete($id)
+    {
+        return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id], true);
+    }
+
+    public function creat($fields)
+    {
+        $sql_parts = [];
+        $attributes = [];
+        foreach ($fields as $key => $value) {
+            $sql_parts[] = "$key = ?";
+            $attributes[] = $value;
+        }
+        $sql_part = implode(', ', $sql_parts);
+        return $this->query("INSERT INTO {$this->table} SET {$sql_part}", $attributes, true);
+    }
+
+    public function extract($key, $value): array
+    {
+        $records = $this->all();
+        $return = [];
+        foreach ($records as $k => $v){
+            $return[$v->$key] = $v->$value;
+        }
+        return $return;
+    }
 
     public function all()
     {
